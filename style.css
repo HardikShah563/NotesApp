@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    list-style-type: none;
+}
+
+body {
+    background-color: #000000;
+}
+
+nav {
+    background-color: #202020;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+nav li p {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+form input {
+    padding: 6px;
+    color: #000000;
+}
+
+button {
+    background-color: #202020;
+    border: 1px solid #4cAf50;
+    color: #4cAf50;
+    font-weight: 800;
+    font-size: 16px;
+    padding: 5px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+button:hover {
+    background-color: #4cAf50;
+    color: #000000;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    margin: 40px 40px;
+}
+
+.section {
+    width: 90vw;
+    margin: auto auto;
+}
+
+textarea {
+    border-radius: 12px;
+    display: block;
+    width: 60vw;
+    resize: none;
+    margin: 10px 0px;
+    padding: 10px;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #050505;
+    font-weight: 500;
+}
+
+/* Card CSS */
+.note {
+    display: inline-block;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px;
+    width: 400px;
+}
+
+hr {
+    margin: 10px 0px;
+    
+}
