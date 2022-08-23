@@ -28,21 +28,47 @@ addBtn.addEventListener("click", () => {
     console.log("This is notes printing after pushing the files: ", notes);
     addTxt.value = "";
     localStorage.setItem("notes", JSON.stringify(notes));
+    showNotes();
 })
 
 function showNotes() {
-    notes.forEach(note => {
+    document.querySelectorAll(".note").forEach(note => note.remove());
+    notes.forEach((note, index) => {
         let newNote = `<div class="note">
                             <h3>Note Title</h3>
                             <br>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt minus quaerat accusantium facilis molestias a laboriosam veniam sunt nemo excepturi.</p><br>
-                            <button class="note-button" id="edit">Edit</button>
-                            <button class="note-button" id="delete">Delete</button>
+                            <p contenteditable="false">${note.description}</p><br>
+                            <button onclick="editNote(${index}, ${notes.description})" class="note-button" id="edit">Edit</button>
+                            <button onclick="deleteNote(${index})" class="note-button" id="delete">Delete</button>
                             <hr>
-                            <span>Last updated on: month date, year</span>
+                            <span>Last updated on: ${note.timeInfo}</span>
                         </div>`;
-                        listType.insertAdjacentElement("afterend", newNote);
+                        listType.insertAdjacentHTML("afterend", newNote);
     });
     console.log("showNotes works");
 }
-showNotes();
+
+function deleteNote(deleteNoteId) {
+    console.log(deleteNoteId, ' numbered note is deleted! ');
+    notes.splice(deleteNoteId, 1);
+    // saving updated notes to localStorage
+    localStorage.setItem("notes", JSON.stringify(notes));
+    showNotes();
+}
+
+function editNote(editId, noteDescription) {
+    console.log(editId, noteDescription);
+    let noteDesc = document.getElementById('edit');
+    noteDesc.innerHTML("contenteditable = true");
+    showNotes();
+}
+
+if(/*if someone reloads the page*/true) {
+    console.log( "This page is reloaded" );
+}
+
+console.info(performance.navigation.type);
+if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+    console.log( "This page is reloaded" );
+    showNotes();
+}
