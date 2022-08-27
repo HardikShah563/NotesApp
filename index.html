@@ -23,24 +23,32 @@
     <h1>Welcome to Notes App!</h1>
     <div class="section">
         <div class="form">
+            <h2>Add Note Title</h2>
+            <input placeholder="0-200 characters" type="text" id="addTitle">
             <h2>Add a note!</h2>
-            <textarea required name="addTxt" id="addTxt" cols="30" rows="5" placeholder="Add a Note"></textarea>
+            <textarea name="addTxt" id="addTxt" cols="30" rows="5" placeholder="Add a Note" required></textarea>
             <button id="addBtn">Add Note</button>
         </div>
     </div>
     <hr>
     <h1>Your Notes: </h1>
     <div class="section">
-        <div id="list-type"></div>
         <!-- <div class="note">
-            <h3>Note Title</h3>
+            <h3>Sample Note</h3>
             <br>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt minus quaerat accusantium facilis molestias a laboriosam veniam sunt nemo excepturi.</p><br>
+            <p>This is how a note looks like. </p><br>
             <button class="note-button" id="edit">Edit</button>
             <button class="note-button" id="delete">Delete</button>
             <hr>
             <span>Last updated on: month date, year</span>
         </div> -->
+
+        <div class="no-notes-section">
+            <p>Yur notes are visible above. If they are not, try creating one!</p>
+            <br>
+            <p class="astricks">-------- ****** --------</p>
+        </div>
+        <div id="list-type"></div>
     </div>
     <script src="script.js"></script>
 </body>
